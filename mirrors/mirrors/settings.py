@@ -38,7 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # dev tools
     'debug_toolbar',
+
+    # restframework
+    'rest_framework',
 
     'mirr_accounts',
 )
@@ -86,6 +91,14 @@ DATABASES = {
     }
 }
 
+# http://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -111,3 +124,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 STATIC_URL = '/static/'
 
 INTERNAL_IPS = ('127.0.0.1', )
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#login-url
+
+LOGIN_URL = '/'

@@ -18,8 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('mirr_accounts.urls')),
-    url(r'^accounts', include('mirr_accounts.urls')),
+    # url(r'', include('mirr_accounts.urls')),
+    url(r'^api/v1/accounts/', include('mirr_accounts.urls')),
 ]
 
 if settings.DEBUG:
