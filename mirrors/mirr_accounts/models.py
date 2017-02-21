@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models import signals
-from django.dispatch import receiver
+# from django.db.models import signals
+# from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
@@ -28,6 +28,7 @@ class UserProfile(models.Model):
 class CheckImage(models.Model):
     image_id = models.CharField(max_length=255, primary_key=True, help_text='图片Id')
     image_value = models.CharField(max_length=255, help_text='图片值')
+    is_valid = models.BooleanField(default=True, help_text='验证码是否有效')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
