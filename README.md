@@ -9,7 +9,7 @@
 
 ### 登录API
 ```
-curl POST --user root:root http://127.0.0.1/api/v1/accounts/login/ -v
+curl POST --user username:password http://127.0.0.1/api/v1/accounts/login/ -v
 ```
 
 ### 登出API
