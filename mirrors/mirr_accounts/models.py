@@ -13,8 +13,9 @@ class UserProfile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nikename = models.CharField(max_length=255, default='', blank=True, null=True, help_text='别名')
-    mobile_no = models.CharField(max_length=255, unique=True, help_text='手机号')
-    gender = models.CharField(max_length=255, choices=GENDER_TYPES, default='privacy', help_text='性别')
+    mobile_no = models.CharField(max_length=255, blank=True, null=True, help_text='手机号')
+    gender = models.CharField(max_length=255, choices=GENDER_TYPES, default='privacy',
+                              help_text='性别', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

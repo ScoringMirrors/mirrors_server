@@ -69,14 +69,14 @@ def create_register_token(ip, image_id):
     return image.image_value
 
 
-def validity_register_token(ip, image_id):
+def validity_register_token(ip, image_id, register_token):
     image = CheckImage.objects.filter(image_id=image_id)
     if image.exists() is False:
         return False
     image = image.last()
     if image.is_valid:
         return False
-    if image.image_value == sha256(bytes('{}{}{}'.format(ip, settings.SECRET_KEY, image_id), 'utf-8')).hexdigest():
+    if image.image_value == register_token:
         image.delete()
         return True
     return False
