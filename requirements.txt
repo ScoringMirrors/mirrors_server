@@ -4,7 +4,10 @@ django-debug-toolbar==1.6
 django-filter==1.0.1
 djangorestframework==3.5.4
 Markdown==2.6.8
+olefile==0.44
 packaging==16.8
+Pillow==4.0.0
 pyparsing==2.1.10
 six==1.10.0
 sqlparse==0.2.2
+wheezy.captcha==0.1.44

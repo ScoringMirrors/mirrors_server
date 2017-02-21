@@ -128,3 +128,8 @@ INTERNAL_IPS = ('127.0.0.1', )
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 
 LOGIN_URL = '/'
+
+# 验证码字符
+
+CHECK_STR = 'ABCDEFGHKMNPRSTUVWXYabcdefghijklmnopqrstuvwxyz1345678'
+CHECK_IMAGE_FONTS_PATH = os.path.join(BASE_DIR, STATIC_URL.replace('/', ''), 'check_image_fonts')

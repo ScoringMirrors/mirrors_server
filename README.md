@@ -16,3 +16,8 @@ curl POST --user root:root http://127.0.0.1/api/v1/accounts/login/ -v
 ```
 curl http://127.0.0.1/api/v1/accounts/logout/  -v
 ```
+
+### 获取验证码API
+```
+curl http://127.0.0.1/api/v1/accounts/get_check_code/ -v
+```
