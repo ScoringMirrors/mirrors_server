@@ -13,5 +13,5 @@ router.register(r'register', RegisterView, base_name='register')
 urlpatterns = router.urls + [
     url(r'^login/$', csrf_exempt(LoginView.as_view()), name='login'),
     url(r'^logout/$', login_required(LogoutView.as_view()), name='logout'),
-    url(r'^get_check_code/$', CheckImageView.as_view(), name='get_check_code'),
+    url(r'^get_check_code/$', csrf_exempt(CheckImageView.as_view()), name='get_check_code'),
 ]

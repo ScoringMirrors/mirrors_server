@@ -73,9 +73,11 @@ def validity_register_token(ip, image_id, register_token):
     image = CheckImage.objects.filter(image_id=image_id)
     if image.exists() is False:
         return False
+
     image = image.last()
     if image.is_valid:
         return False
+
     if image.image_value == register_token:
         image.delete()
         return True

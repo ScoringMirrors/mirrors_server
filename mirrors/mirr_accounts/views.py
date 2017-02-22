@@ -74,7 +74,7 @@ class RegisterView(ViewSet):
         return response
 
     def create(self, request):
-        check_key_list = ['password', 'password2', 'email', 'nikename']
+        check_key_list = ['nikename', 'email', 'password', 'password2', ]
         query = request.data
         for key in check_key_list:
             if not query.get(key):
